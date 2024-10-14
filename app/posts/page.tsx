@@ -1,37 +1,44 @@
 import CardList from "../components/post/CardList";
 import ViewUserButton from "../components/post/ViewUserButton";
+import motor from "../../public/data/motor.json"
 
-const base_url = "https://jsonplaceholder.typicode.com/posts"
-
-interface Iposts {
-    map(arg0: (post: any) => import("react").JSX.Element): unknown;
-    userId: number,
-    id: number,
-    title: string,
-    body: string,
+interface IMotor {
+    id: number;
+    namaMotor: string;
+    tahunKeluaran: number;
+    warna: string;
+    lokasi: {
+        alamat: string;
+        kota: string;
+        kecamatan: string;
+        kodePos: string;
+    };
+    harga: {
+        biaya: number;
+    };
 }
 
-const posts = async() => {
-    const response = await fetch(base_url, {
-        cache: "no-store"
-    });
-    const posts: Iposts = await response.json();
+// Mengasumsikan struktur data motor yang diimpor
+const posts = () => {
+    const motors: IMotor[] = motor.motor; // Akses array objek motor
     
     return (
         <>
             <p>{new Date().toLocaleTimeString()}</p>
-        <h1 className="text-fuchsia-500">POSTINGAN PAGE</h1>
-        {posts.map((post) => {
-            return (
-               <CardList key={post.id}>
-                <p>{post.id}</p>
-                <i>{post.title}</i>
-                <p>{post.body}</p>
-                <ViewUserButton userId={post.userId}/>
-                </CardList> 
-            )
-        })}
-        
+            <h1 className="text-fuchsia-500">DAFTAR MOTOR</h1>
+            {motors.map((motor) => {
+                return (
+                    <CardList key={motor.id}>
+                        <p>ID: {motor.id}</p>
+                        <i>Nama Motor: {motor.namaMotor}</i>
+                        <p>Tahun Keluaran: {motor.tahunKeluaran}</p>
+                        <p>Warna: {motor.warna}</p>
+                        <p>Lokasi: {motor.lokasi.alamat}, {motor.lokasi.kota}, {motor.lokasi.kecamatan}, {motor.lokasi.kodePos}</p>
+                        <p>Harga: {motor.harga.biaya.toLocaleString('id-ID', { style: 'currency', currency: 'IDR' })}</p>
+                        <ViewUserButton userId={motor.id} /> 
+                    </CardList>
+                );
+            })}
         </>
     );
 };

@@ -1,0 +1,65 @@
+{
+    "motor": [
+      {
+        "id": 1,
+        "namaMotor": "Motor Supra",
+        "tahunKeluaran": 2010,
+        "warna": "Merah",
+        "lokasi": {
+          "alamat": "Jalan Raya 123",
+          "kota": "Blitar",
+          "kecamatan": "Sananwetan",
+          "kodePos": "66137"
+        },
+        "harga": {
+          "biaya": 10000000
+        }
+      },
+      {
+        "id": 2,
+        "namaMotor": "Motor Revo",
+        "tahunKeluaran": 2015,
+        "warna": "Biru",
+        "lokasi": {
+          "alamat": "Jalan Melati 456",
+          "kota": "Blitar",
+          "kecamatan": "Kepanjenkidul",
+          "kodePos": "66117"
+        },
+        "harga": {
+          "biaya": 12000000
+        }
+      },
+      {
+        "id": 3,
+        "namaMotor": "Motor Astrea",
+        "tahunKeluaran": 2005,
+        "warna": "Hitam",
+        "lokasi": {
+          "alamat": "Jalan Kenanga 789",
+          "kota": "Blitar",
+          "kecamatan": "Sukorejo",
+          "kodePos": "66121"
+        },
+        "harga": {
+          "biaya": 9000000
+        }
+      },
+      {
+        "id": 4,
+        "namaMotor": "Motor RX King",
+        "tahunKeluaran": 2000,
+        "warna": "Kuning",
+        "lokasi": {
+          "alamat": "Jalan Cemara 321",
+          "kota": "Blitar",
+          "kecamatan": "Kanigoro",
+          "kodePos": "66171"
+        },
+        "harga": {
+          "biaya": 15000000
+        }
+      }
+    ]
+  }
+  
